@@ -5,6 +5,10 @@ var uuid = require('react-uuid');
 var con = require('../db/connection')
 
 /* GET home page. */
+router.get('/', function(req, res){
+  res.sendFile('public/index.html');
+});
+
 router.get('/clients', function(req, res, next) {
   const sql = "Select * from Client";
   con.query(sql, function(err, result){
